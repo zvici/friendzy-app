@@ -23,11 +23,14 @@ export default function TabBar(props: TabBarProps) {
   const { state, navigation, descriptors } = props;
   const insets = useSafeAreaInsets();
 
-  const backgroundLeft = useSharedValue(15);
+  const backgroundLeft = useSharedValue(0);
+
+  const totalRoutes = state.routes.length;
+  const oneRouteWidth = (screenWidth - 48) / totalRoutes;
 
   useEffect(() => {
     backgroundLeft.value = withTiming(
-      ((screenWidth - 28) / 4) * state.index + 15,
+      oneRouteWidth * state.index + (oneRouteWidth / 2 - 20),
       {
         duration: 300,
         easing: Easing.inOut(Easing.ease),
@@ -76,7 +79,7 @@ export default function TabBar(props: TabBarProps) {
           }
         };
         return (
-          <TouchableOpacity key={index} onPress={onPress}>
+          <TouchableOpacity key={index} onPress={onPress} style={styles.button}>
             <Icon
               name={getIconName(route.name)}
               variant={isFocused ? "bold" : "outline"}
@@ -95,7 +98,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     height: 64,
     backgroundColor: "#fff",
-    paddingHorizontal: 24,
     marginHorizontal: 24,
     borderRadius: 40,
     shadowColor: colors.light.secondary,
@@ -115,5 +117,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.light.primary,
     borderRadius: 40,
     zIndex: -1,
+  },
+  button: {
+    flex: 1,
+    height: 64,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
