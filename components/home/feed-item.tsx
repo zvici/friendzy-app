@@ -3,6 +3,7 @@ import Text from "@/components/ui/text";
 import View from "@/components/ui/view";
 import colors from "@/constants/colors";
 import { ImageBackground } from "expo-image";
+import { LinearGradient } from "expo-linear-gradient";
 import { Dimensions, StyleSheet } from "react-native";
 
 const { width } = Dimensions.get("window");
@@ -23,6 +24,11 @@ export default function FeedItem(props: Props) {
       }}
       style={styles.background}
     >
+      <LinearGradient
+        colors={["rgba(0,0,0,0.5)", "transparent", "rgba(0,0,0,0.5)"]}
+        style={StyleSheet.absoluteFillObject}
+      />
+
       <View style={styles.topic}>
         <Text color={colors.dark.text}>{topic}</Text>
       </View>
