@@ -1,4 +1,12 @@
-import { GoogleIcon, HomeIcon, IconNames, PhoneIcon } from "@/assets/svg";
+import {
+  DiscoverIcon,
+  GoogleIcon,
+  HomeIcon,
+  IconNames,
+  MatchesIcon,
+  MessagesIcon,
+  PhoneIcon,
+} from "@/assets/svg";
 
 interface Props {
   name: IconNames;
@@ -16,6 +24,12 @@ export default function Icon(props: Props) {
       return <GoogleIcon width={size} />;
     case "home":
       return <HomeIcon width={size} variant={variant} />;
+    case "discover":
+      return <DiscoverIcon width={size} variant={variant} />;
+    case "messages":
+      return <MessagesIcon width={size} variant={variant} />;
+    case "matches":
+      return <MatchesIcon width={size} variant={variant} />;
     default:
       return null;
   }

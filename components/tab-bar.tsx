@@ -58,15 +58,6 @@ export default function TabBar(props: TabBarProps) {
       />
       {state.routes.map((route, index) => {
         const isFocused = state.index === index;
-        // Map route names to valid icon names
-        const getIconName = (routeName: string): IconNames => {
-          switch (routeName) {
-            case "Home":
-              return "home";
-            default:
-              return "home"; // Provide a default icon
-          }
-        };
         const onPress = () => {
           const event = navigation.emit({
             type: "tabPress",
@@ -81,7 +72,7 @@ export default function TabBar(props: TabBarProps) {
         return (
           <TouchableOpacity key={index} onPress={onPress} style={styles.button}>
             <Icon
-              name={getIconName(route.name)}
+              name={route.name as IconNames}
               variant={isFocused ? "bold" : "outline"}
             />
           </TouchableOpacity>
