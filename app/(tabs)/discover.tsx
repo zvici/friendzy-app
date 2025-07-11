@@ -1,11 +1,9 @@
-import { Text, View } from "@/components";
+import { Container, IconButton, TopBar } from "@/components";
 
 export default function DiscoverScreen() {
   return (
-    <View center flex={1}>
-      <Text align="center" variant="heading3" marginBottom={16}>
-        Welcome to the Discover Screen! This is a placeholder for your content.
-      </Text>
-    </View>
+    <Container>
+      <TopBar title="Discover" rightButton={<IconButton name="bell" />} />
+    </Container>
   );
 }

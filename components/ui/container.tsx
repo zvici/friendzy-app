@@ -1,25 +1,27 @@
+import colors from "@/constants/colors";
 import React, { ReactNode } from "react";
 import { DimensionValue, StyleSheet, View, ViewStyle } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 interface ContainerProps {
   children: ReactNode;
   style?: ViewStyle;
   padding?: DimensionValue;
-  margin?: DimensionValue;
   centered?: boolean;
   flex?: number;
-  backgroundColor?: string;
+  fullScreen?: boolean;
 }
 
 const Container: React.FC<ContainerProps> = ({
   children,
   style,
   padding,
-  margin,
   centered = false,
   flex = 1,
-  backgroundColor = "transparent",
+  fullScreen = false,
 }) => {
+  const insets = useSafeAreaInsets();
+
   return (
     <View
       style={[
@@ -27,9 +29,8 @@ const Container: React.FC<ContainerProps> = ({
         {
           flex,
           padding,
-          margin,
-          backgroundColor,
           ...(centered ? styles.centered : {}),
+          ...(fullScreen ? {} : { paddingTop: insets.top }),
         },
         style,
       ]}
@@ -42,6 +43,7 @@ const Container: React.FC<ContainerProps> = ({
 const styles = StyleSheet.create({
   container: {
     width: "100%",
+    backgroundColor: colors.light.background,
   },
   centered: {
     justifyContent: "center",

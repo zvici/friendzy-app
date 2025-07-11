@@ -1,4 +1,6 @@
 import {
+  BackIcon,
+  BellIcon,
   DiscoverIcon,
   GoogleIcon,
   HomeIcon,
@@ -30,6 +32,10 @@ export default function Icon(props: Props) {
       return <MessagesIcon width={size} variant={variant} />;
     case "matches":
       return <MatchesIcon width={size} variant={variant} />;
+    case "back":
+      return <BackIcon width={size} />;
+    case "bell":
+      return <BellIcon width={size} />;
     default:
       return null;
   }

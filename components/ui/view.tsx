@@ -1,9 +1,9 @@
 import React, { forwardRef } from "react";
 import {
-    DimensionValue,
-    View as RNView,
-    StyleSheet,
-    ViewProps,
+  DimensionValue,
+  View as RNView,
+  StyleSheet,
+  ViewProps,
 } from "react-native";
 
 interface CustomViewProps extends ViewProps {
@@ -27,7 +27,7 @@ interface CustomViewProps extends ViewProps {
   elevation?: number;
 }
 
-export const View = forwardRef<RNView, CustomViewProps>(
+const View = forwardRef<RNView, CustomViewProps>(
   (
     {
       style,

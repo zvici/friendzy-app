@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   heading3: {
-    fontSize: 20,
+    fontSize: 28,
     fontWeight: "bold",
     marginBottom: 4,
   },

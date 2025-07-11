@@ -1,6 +1,6 @@
 import { IconNames } from "@/assets/svg";
 import Icon from "@/components/ui/icon";
-import { View } from "@/components/ui/view";
+import View from "@/components/ui/view";
 import colors from "@/constants/colors";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useEffect } from "react";
@@ -99,7 +99,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 10,
     elevation: 6,
-    position: "relative",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
   },
   backgroundButton: {
     position: "absolute",

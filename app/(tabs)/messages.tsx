@@ -1,11 +1,19 @@
-import { Text, View } from "@/components";
+import { Container, IconButton, TopBar } from "@/components";
+import { useRouter } from "expo-router";
 
 export default function MessagesScreen() {
+  const router = useRouter();
+  const handleNotificationPress = () => {
+    router.push("/sign-in");
+  };
   return (
-    <View center flex={1}>
-      <Text align="center" variant="heading3" marginBottom={16}>
-        Welcome to the Messages Screen! This is a placeholder for your content.
-      </Text>
-    </View>
+    <Container>
+      <TopBar
+        title="Messages"
+        rightButton={
+          <IconButton name="bell" onPress={handleNotificationPress} />
+        }
+      />
+    </Container>
   );
 }

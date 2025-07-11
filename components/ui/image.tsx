@@ -8,7 +8,7 @@ type ImageProps = React.ComponentProps<typeof ExpoImage> & {
   marginTop?: number;
 };
 
-export function Image({ width, height, style, ...props }: ImageProps) {
+export default function Image({ width, height, style, ...props }: ImageProps) {
   const imageStyle = StyleSheet.create({
     image: {
       width: width as any,
@@ -20,5 +20,3 @@ export function Image({ width, height, style, ...props }: ImageProps) {
 
   return <ExpoImage style={[imageStyle.image, style]} {...props} />;
 }
-
-export default Image;

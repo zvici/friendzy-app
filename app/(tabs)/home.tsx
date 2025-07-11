@@ -1,18 +1,27 @@
-import { Button, Text, View } from "@/components";
-import { useRouter } from "expo-router";
+import { Container, IconButton, StoryItem, TopBar } from "@/components";
+import { fakeStories } from "@/data/fakeStories";
+import { FlatList, ScrollView, StyleSheet } from "react-native";
 
 export default function HomeScreen() {
-  const router = useRouter();
-  const handleLogout = () => {
-    router.push("/sign-in"); // Redirect to sign-in screen after logout
-  };
-
   return (
-    <View center flex={1}>
-      <Text align="center" variant="heading3" marginBottom={16}>
-        Welcome to the Home Screen! This is a placeholder for your content.
-      </Text>
-      <Button onPress={handleLogout}>Logout</Button>
-    </View>
+    <Container>
+      <TopBar title="Friendzy" rightButton={<IconButton name="bell" />} />
+      <ScrollView style={styles.main}>
+        <FlatList
+          data={fakeStories}
+          horizontal
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => <StoryItem name={item.name} />}
+          style={styles.story}
+        />
+      </ScrollView>
+    </Container>
   );
 }
+const styles = StyleSheet.create({
+  main: {},
+  story: {
+    paddingHorizontal: 16,
+    marginTop: 16,
+  },
+});

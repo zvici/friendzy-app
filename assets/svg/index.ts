@@ -1,3 +1,5 @@
+export { default as BackIcon } from "./back";
+export { default as BellIcon } from "./bell";
 export { default as DiscoverIcon } from "./discover";
 export { default as GoogleIcon } from "./google";
 export { default as HomeIcon } from "./home";
@@ -10,4 +12,6 @@ export type IconNames =
   | "home"
   | "discover"
   | "messages"
-  | "matches";
+  | "matches"
+  | "back"
+  | "bell";
