@@ -3,10 +3,13 @@ export { default as Button } from "./ui/button";
 export { default as Container } from "./ui/container";
 export { default as IconButton } from "./ui/icon-button";
 export { default as Image } from "./ui/image";
+export { default as Segmented } from "./ui/segmented";
 export { default as Text } from "./ui/text";
 export { default as View } from "./ui/view";
 // navigation components
 export { default as TabBar } from "./tab-bar";
 export { default as TopBar } from "./top-bar";
 // home components
+export { default as FeedItem } from "./home/feed-item";
 export { default as StoryItem } from "./home/story-item";
+

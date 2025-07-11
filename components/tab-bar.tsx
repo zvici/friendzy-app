@@ -2,6 +2,7 @@ import { IconNames } from "@/assets/svg";
 import Icon from "@/components/ui/icon";
 import View from "@/components/ui/view";
 import colors from "@/constants/colors";
+import { LAYOUT } from "@/constants/layout";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { useEffect } from "react";
 import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    height: 64,
+    height: LAYOUT.TAB_BAR_HEIGHT,
     backgroundColor: "#fff",
     marginHorizontal: 24,
     borderRadius: 40,
