@@ -14,7 +14,9 @@ export default function StoryItem(props: StoryItemProps) {
     <Pressable style={styles.storyItem}>
       <View style={styles.avatar}>
         <Image
-          source={require("@/assets/images/users/moka.jpg")}
+          source={{
+            uri: "https://i.pravatar.cc/200?" + Math.random(),
+          }}
           width={56}
           height={56}
           style={styles.avatarImage}

@@ -12,4 +12,6 @@ export { default as TopBar } from "./top-bar";
 // home components
 export { default as FeedItem } from "./home/feed-item";
 export { default as StoryItem } from "./home/story-item";
+// discover components
+export { default as NewUserItem } from "./discover/new-user-item";
 

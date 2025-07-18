@@ -26,10 +26,12 @@ export default function HomeScreen() {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <StoryItem name={item.name} />}
           style={styles.story}
+          showsHorizontalScrollIndicator={false}
         />
         <Segmented
           values={["Make Friends", "Search Partners"]}
           style={styles.segmented}
+          selectedIndex={0}
         />
         <View
           style={[
@@ -37,15 +39,19 @@ export default function HomeScreen() {
             { paddingBottom: insets.bottom + LAYOUT.TAB_BAR_HEIGHT },
           ]}
         >
-          {fakeFeeds.map((feed) => (
-            <FeedItem
-              key={feed.id}
-              position={feed.position}
-              topic={feed.topic}
-              author={feed.author}
-              content={feed.content}
-            />
-          ))}
+          <FlatList
+            data={fakeFeeds}
+            keyExtractor={(item) => `${item.id}`}
+            renderItem={({ item }) => (
+              <FeedItem
+                position={item.position}
+                topic={item.topic}
+                author={item.author}
+                content={item.content}
+              />
+            )}
+            showsVerticalScrollIndicator={false}
+          />
         </View>
       </ScrollView>
     </Container>
