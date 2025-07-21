@@ -14,4 +14,5 @@ export { default as FeedItem } from "./home/feed-item";
 export { default as StoryItem } from "./home/story-item";
 // discover components
 export { default as NewUserItem } from "./discover/new-user-item";
+export { default as TopicItem } from "./discover/topic-item";
 

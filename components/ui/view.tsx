@@ -9,7 +9,10 @@ import {
 interface CustomViewProps extends ViewProps {
   center?: boolean;
   padding?: DimensionValue;
+  paddingHorizontal?: DimensionValue;
+  paddingVertical?: DimensionValue;
   margin?: DimensionValue;
+  marginBottom?: DimensionValue;
   flex?: number;
   row?: boolean;
   wrap?: boolean;
@@ -33,7 +36,10 @@ const View = forwardRef<RNView, CustomViewProps>(
       style,
       center,
       padding,
+      paddingHorizontal,
+      paddingVertical,
       margin,
+      marginBottom,
       flex,
       row,
       wrap,
@@ -50,7 +56,10 @@ const View = forwardRef<RNView, CustomViewProps>(
     const customStyle = [
       center && styles.center,
       padding !== undefined && { padding },
+      paddingHorizontal !== undefined && { paddingHorizontal },
+      paddingVertical !== undefined && { paddingVertical },
       margin !== undefined && { margin },
+      marginBottom !== undefined && { marginBottom },
       flex !== undefined && { flex },
       row && styles.row,
       wrap && styles.wrap,

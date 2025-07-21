@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     width: 105,
     height: 160,
     borderRadius: 16,
-    marginRight: 12,
+    marginLeft: 12,
     overflow: "hidden",
     alignItems: "center",
     justifyContent: "flex-end",

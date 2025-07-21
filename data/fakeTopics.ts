@@ -1,0 +1,16 @@
+export const fakeTopics = [
+  "⚽️ Sports",
+  "🎮 Gaming",
+  "📚 Literature",
+  "🎨 Art & Design",
+  "🎵 Music",
+  "🌍 Travel",
+  "🍽️ Food & Cooking",
+  "💻 Technology",
+  "🧘‍♀️ Health & Wellness",
+  "📺 Movies & TV",
+  "📰 News & Politics",
+  "👗 Fashion & Beauty",
+  "🚀 Science & Space",
+  "🏆 Personal Development",
+];
